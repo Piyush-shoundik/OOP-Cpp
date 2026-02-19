@@ -1,35 +1,48 @@
-// lets create a class and object
+
+// simple bank account managment system
 
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
-class print{
+class BankAccount{
     private:
-    string name;
-    int classroom;
+    string name; 
+    int accoutnumber = 0;
+    int balance = 0;
 
     public:
-    void getinput(){
-        cout << "Enter your name here \n";
-        cin >> name ;
-
-        cout << "Enter your classroom here \n";
-        cin >> classroom;
+    void createAccount(){
+        cout << "Enter you name" << endl;
+        getline(cin,name);
+    }
+    void deposit(){
+        int amount;
+        cout << "Enter the amount you want to deposit" << endl ;
+        cin >> amount;
+        balance = balance + amount;
+    }
+    void withdraw(){
+        int amount;
+        cout << "Enter Amount you want to withdraw" << endl;
+        cin >> amount;
+        balance = balance - amount; 
+    }
+    void displayAccount(){
+        cout << "Welcome Back " << name << endl;
+        cout << "Available balance is = " << balance ;
     }
 
-    void print_command(){
-        cout << "Name is " << name << endl;
-        cout << "Classroom is " << classroom << endl;
-    }
+
 };
  
 int main(){
-    print classprint[3];
-
-    for(int i = 0; i < 3; i++){
-        classprint[i].getinput();
-        classprint[i].print_command();
-    }
+    // int amount = 0;
+    BankAccount bankd;
+    bankd.createAccount();
+    bankd.deposit();
+    bankd.withdraw();
+    bankd.displayAccount();
 
 }
