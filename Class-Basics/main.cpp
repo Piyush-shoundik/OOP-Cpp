@@ -1,5 +1,5 @@
 
-// simple bank account managment system
+// performing addition by using static data member
 
 #include <iostream>
 #include <string>
@@ -8,41 +8,35 @@ using namespace std;
 
 class BankAccount{
     private:
-    string name; 
-    int accoutnumber = 0;
-    int balance = 0;
+    int a; 
+    int b;
+    static int c;
 
     public:
-    void createAccount(){
-        cout << "Enter you name" << endl;
-        getline(cin,name);
-    }
-    void deposit(){
-        int amount;
-        cout << "Enter the amount you want to deposit" << endl ;
-        cin >> amount;
-        balance = balance + amount;
-    }
-    void withdraw(){
-        int amount;
-        cout << "Enter Amount you want to withdraw" << endl;
-        cin >> amount;
-        balance = balance - amount; 
-    }
-    void displayAccount(){
-        cout << "Welcome Back " << name << endl;
-        cout << "Available balance is = " << balance ;
-    }
 
+    // void getvalue(){
+    //     cout << "Enter value for 1 and 2" << endl;
+    //     cin >> a >> b ;
+    // }
 
+    int sum(int a, int b){
+        c = a + b;
+        return c;
+    }
+    void outvalue(int c){
+        cout << "The total output is " << c ;
+    }
 };
  
-int main(){
-    // int amount = 0;
-    BankAccount bankd;
-    bankd.createAccount();
-    bankd.deposit();
-    bankd.withdraw();
-    bankd.displayAccount();
+int BankAccount::c = 0;
 
+int main(){
+    int a ,b;
+    cout << "Enter your value for the a and b";
+    cin >> a >> b;
+
+    BankAccount bankd;
+    int total = bankd.sum(a , b);
+    bankd.outvalue(total);
+    
 }
