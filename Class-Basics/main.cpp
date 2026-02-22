@@ -1,5 +1,5 @@
 
-// performing addition by using static data member
+// using static data function also static data member
 
 #include <iostream>
 #include <string>
@@ -19,24 +19,25 @@ class BankAccount{
     //     cin >> a >> b ;
     // }
 
-    int sum(int a, int b){
-        c = a + b;
-        return c;
+    void getdata(){
+        cout << "Enter your number you want to modify" << endl ;
+        cin >> a ;
+        c = a;
     }
-    void outvalue(int c){
-        cout << "The total output is " << c ;
+    static void sum(){
+        cout << "current value of c is " << c ;
+        c = c + 1;
+    }
+    void outvalue(){
+        cout << "\nCurrent value of a and c are respectively " << a << " " << c ;
     }
 };
+
+int BankAccount::c;
  
-int BankAccount::c = 0;
-
 int main(){
-    int a ,b;
-    cout << "Enter your value for the a and b";
-    cin >> a >> b;
-
-    BankAccount bankd;
-    int total = bankd.sum(a , b);
-    bankd.outvalue(total);
-    
+    BankAccount Bankd;
+    Bankd.getdata();
+    BankAccount::sum();
+    Bankd.outvalue();
 }
