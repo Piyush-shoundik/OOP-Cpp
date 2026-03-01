@@ -1,5 +1,5 @@
 
-//using default constructor 
+//using parametrized constructor 
 
 #include <iostream> 
 #include <vector> 
@@ -7,19 +7,16 @@
 #include <limits>
 using namespace std;
 
-class printt{
+class inn{
     private:
     int a;
 
     public:
-    printt(){
-        a = 0;
-        a += 1;
-        cout << "Value of a is " << a ; 
+    inn(int innput){
+        cout << "Value for parameterized constructor " << innput ;
     }
 };
 
 int main(){
-    printt getdata;
-    printt get2data;
+    inn class_inn(5);
 }
