@@ -1,5 +1,5 @@
 
-//using parametrized constructor 
+//using copy constructor 
 
 #include <iostream> 
 #include <vector> 
@@ -8,15 +8,27 @@
 using namespace std;
 
 class inn{
-    private:
-    int a;
-
     public:
+
+    int a;
     inn(int innput){
-        cout << "Value for parameterized constructor " << innput ;
+        a = innput;
+    }
+    inn(inn &obj){
+        a = obj.a;
+    }
+    void putdata(){
+        cout << "value of a is " << a ; 
     }
 };
 
 int main(){
     inn class_inn(5);
+
+    inn class_inn2 = class_inn; 
+    class_inn2.a = 20;
+
+    inn class_inn3 = class_inn2;
+
+    class_inn3.putdata();
 }
