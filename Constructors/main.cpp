@@ -17,7 +17,8 @@ class inn{
     }
 
     ~inn(){
-        cout << "Destructors is called " << a-- << endl ; 
+        a--;
+        cout << "Destructors is called " << a << endl ; 
     }
 
     void putdata(){
