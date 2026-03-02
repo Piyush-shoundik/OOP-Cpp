@@ -1,5 +1,5 @@
 
-//using constructor overloading
+//using Destructors 
 
 #include <iostream> 
 #include <vector> 
@@ -7,29 +7,24 @@
 #include <limits>
 using namespace std;
 
+int a = 0;
 class inn{
-    public:
 
-    int a;
+    public:
     inn(){
-      cout << "constructor is called\n" ;
+        a++;
+        cout << "constructor is called " << a << endl;
     }
-    inn(int innput){
-        a = innput;
+
+    ~inn(){
+        cout << "Destructors is called " << a-- << endl ; 
     }
-    inn(inn &obj){
-        a = obj.a;
-    }
+
     void putdata(){
         cout << "value of a is " << a << endl ; 
     }
 };
 
 int main(){
-    inn class_inn;
-    inn class_inn2(5);
-    class_inn2.putdata();
-    inn class_inn3(class_inn2);
-    class_inn3.putdata();
-   
+    inn class_inn,class_inn2,class_inn3;
 }
