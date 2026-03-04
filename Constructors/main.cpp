@@ -1,5 +1,5 @@
 
-//using Destructors 
+//using Destructors and constructor at same time 
 
 #include <iostream> 
 #include <vector> 
@@ -13,19 +13,20 @@ class inn{
     public:
     inn(){
         a++;
-        cout << "constructor is called " << a << endl;
+        cout << "constructor a is called" << a << endl;
     }
 
     ~inn(){
         a--;
-        cout << "Destructors is called " << a << endl ; 
+        cout << "Destructors a is called " << a << endl ; 
     }
 
     void putdata(){
-        cout << "value of a is " << a << endl ; 
+        cout << "Program is completed"<< endl ; 
     }
 };
 
 int main(){
-    inn class_inn,class_inn2,class_inn3;
+    inn class_inn,class_inn2,class_inn3; 
+    class_inn3.putdata();
 }
