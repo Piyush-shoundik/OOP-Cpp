@@ -1,20 +1,20 @@
 // Starting with inhertance
-// multiple inheritance 
+// Multilevel inheritance 
 
 #include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
 class a{
-
-    protected:
+    public:
     int x;
     a(){
         x = 10;
     }
-
 };
 
-class b{
+class b:public a {
     public:
     int y;
 
@@ -29,7 +29,7 @@ class b{
     }
 };
 
-class c: public a, public b{
+class c:public b{
     public:
     int z;
     
