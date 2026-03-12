@@ -1,5 +1,5 @@
 // Starting with inhertance
-// Multilevel inheritance 
+// Hierarchical inheritance 
 
 #include <iostream>
 #include <string>
@@ -14,7 +14,7 @@ class a{
     }
 };
 
-class b:public a {
+class b:public a{
     public:
     int y;
 
@@ -24,30 +24,27 @@ class b:public a {
     // }
 
     void input(){
-        cout << "Give input for second number";
-        cin >> y ;
+        cout << "value of x in class b " <<  x << endl;
     }
 };
 
-class c:public b{
+class c:public a{
     public:
     int z;
     
-    // c(){
+    
+    // void plus(){
     //     z = x + y;
     // }
-    void plus(){
-        z = x + y;
-    }
     
     void display(){
-        cout << "Total is " << z;
+        cout << "value of x in class c " << x << endl;
     }
 };
 
 int main(){
-    c cc;
-    cc.input();
-    cc.plus();
+    b bb; c cc;
+    bb.input();
+    // cc.plus();
     cc.display();
 }
