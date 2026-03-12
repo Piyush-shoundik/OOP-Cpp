@@ -1,5 +1,5 @@
 // Starting with inhertance
-// single inheritance 
+// multiple inheritance 
 
 #include <iostream>
 using namespace std;
@@ -7,19 +7,47 @@ using namespace std;
 class a{
 
     protected:
-    int x = 10;
+    int x;
+    a(){
+        x = 10;
+    }
+
 };
 
-class b:private a{
+class b{
     public:
-    int y = 10;
+    int y;
 
+    // b(){
+    //     cout << "Give input for second";
+    //     cin >> y;
+    // }
+
+    void input(){
+        cout << "Give input for second number";
+        cin >> y ;
+    }
+};
+
+class c: public a, public b{
+    public:
+    int z;
+    
+    // c(){
+    //     z = x + y;
+    // }
+    void plus(){
+        z = x + y;
+    }
+    
     void display(){
-        cout << "total is " << x + y ;
+        cout << "Total is " << z;
     }
 };
 
 int main(){
-    b aa;
-    aa.display();
+    c cc;
+    cc.input();
+    cc.plus();
+    cc.display();
 }
