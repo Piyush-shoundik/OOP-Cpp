@@ -1,5 +1,5 @@
 // Starting with inhertance
-// Hierarchical inheritance 
+// method overriding
 
 #include <iostream>
 #include <string>
@@ -8,15 +8,16 @@ using namespace std;
 
 class a{
     public:
-    int x;
-    a(){
-        x = 10;
+    // int x;
+    void input(){
+        cout << "This is parent class " << endl;
     }
+    
 };
 
 class b:public a{
     public:
-    int y;
+    // int y;
 
     // b(){
     //     cout << "Give input for second";
@@ -24,27 +25,28 @@ class b:public a{
     // }
 
     void input(){
-        cout << "value of x in class b " <<  x << endl;
+        cout << "This is child class " << endl;
     }
 };
 
-class c:public a{
-    public:
-    int z;
+// class c:public a{
+//     public:
+//     int z;
     
     
-    // void plus(){
-    //     z = x + y;
-    // }
+//     // void plus(){
+//     //     z = x + y;
+//     // }
     
-    void display(){
-        cout << "value of x in class c " << x << endl;
-    }
-};
+//     void display(){
+//         cout << "value of x in class c " << x << endl;
+//     }
+// };
 
 int main(){
-    b bb; c cc;
+    b bb;
     bb.input();
+    bb.a::input(); //this is to call function of parent class
     // cc.plus();
-    cc.display();
+    // cc.display();
 }
