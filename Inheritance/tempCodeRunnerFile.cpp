@@ -1,3 +1,1 @@
-void plus(){
-    //     z = x + y;
-    // }
+using of virtual function
