@@ -17,21 +17,22 @@ class a{
 
 class b:public a{
     public:
-    b(int x): a(x) {
+    b(int x,int y) : a(x){
         cout << "This is child class 1 " << endl;
+        cout << "value of y " << y << endl;
     }
 };
 
 class c:public b{
     public:
-    c(int x,int y): b(x) {
+   c(int x, int y, int z) : b(x,y) {
         cout << "This is child class 2 " << endl;
-        cout << "value of y is "<< y << endl;
+        cout << "value of z is "<< z << endl;
     }
 };
 
 int main(){
-    c bb(10,30);
+    c bb(10,20,30);
     // bb.input();
     // bb.a::input(); //this is to call function of parent class
 }
