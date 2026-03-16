@@ -1,5 +1,5 @@
 //Getting started with polymorphism
-// operator overloading without constructor 
+//operator overloading without constructor 
 
 #include <iostream>
 using namespace std;
@@ -9,24 +9,24 @@ class add{
     int a;
     public:
     void getinput(){
-        cout << "Give input for a \n";
+        cout << "Give input ";
         cin >> a;
     }
     void putinput(){
-        cout << a << " is the value for this object";
+        cout << a << " is the current value";
     }
-    add operator-(add obj){
-        add new_obj;
-        new_obj.a = a - obj.a;
-        return new_obj;
+    void operator++(int){
+        a = a + 1;
+    }
+    void operator++(){
+        a = a + 1;
     }
 };
 
 int main(){
-    add aa,bb,cc;
+    add aa;
     aa.getinput();
-    bb.getinput();
-    
-    cc = aa - bb;
-    cc.putinput();
+    ++aa;
+    aa++;
+    aa.putinput();
 }
