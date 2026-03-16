@@ -15,10 +15,10 @@ class add{
     void putinput(){
         cout << a << " is the value for this object";
     }
-    add operator+(add obj){
-        add sum;
-        sum.a = a + obj.a;
-        return sum;
+    add operator-(add obj){
+        add new_obj;
+        new_obj.a = a - obj.a;
+        return new_obj;
     }
 };
 
@@ -26,7 +26,7 @@ int main(){
     add aa,bb,cc;
     aa.getinput();
     bb.getinput();
-
-    cc = aa + bb ;
+    
+    cc = aa - bb;
     cc.putinput();
 }
