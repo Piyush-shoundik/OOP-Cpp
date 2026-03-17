@@ -15,14 +15,15 @@ class add{
     void putinput(){
         cout << a << " is the current value";
     }
-    void operator=(add obj){
-        a = obj.a ;
+    void operator+=(add obj){
+        a = obj.a + a ;
     }
 };
 
 int main(){
     add aa,bb;
     aa.getinput();
-    bb = aa;
+    bb.getinput();
+    bb += aa;
     bb.putinput();
 }
