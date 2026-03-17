@@ -1,5 +1,5 @@
 //Getting started with polymorphism
-//operator overloading without constructor 
+//operator overloading shorthand assignment operator (+,+=,-=)
 
 #include <iostream>
 using namespace std;
@@ -15,18 +15,14 @@ class add{
     void putinput(){
         cout << a << " is the current value";
     }
-    void operator++(int){
-        a = a + 1;
-    }
-    void operator++(){
-        a = a + 1;
+    void operator=(add obj){
+        a = obj.a ;
     }
 };
 
 int main(){
-    add aa;
+    add aa,bb;
     aa.getinput();
-    ++aa;
-    aa++;
-    aa.putinput();
+    bb = aa;
+    bb.putinput();
 }
