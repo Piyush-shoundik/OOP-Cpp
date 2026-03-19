@@ -15,8 +15,8 @@ class add{
     void putinput(){
         cout << a << " is the current value";
     }
-    void operator+=(add obj){
-        a = obj.a + a ;
+    void operator=(add obj){
+        a = obj.a ;
     }
 };
 
@@ -24,6 +24,6 @@ int main(){
     add aa,bb;
     aa.getinput();
     bb.getinput();
-    bb += aa;
+    bb= aa;
     bb.putinput();
 }
